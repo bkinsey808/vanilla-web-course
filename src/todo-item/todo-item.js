@@ -1,4 +1,7 @@
 import { insertHtml } from "../utils.js";
+const templatePromise = insertHtml("todo-item/todo-item.html").then(() => {
+  return document.getElementById("todo-item");
+});
 
 /**
  * @class TodoItem
@@ -13,8 +16,7 @@ class TodoItem extends HTMLElement {
     super();
     const shadow = this.attachShadow({ mode: "open" });
 
-    insertHtml("todo-item/todo-item.html").then(() => {
-      const template = document.getElementById("todo-item");
+    templatePromise.then((template) => {
       shadow.append(
         /** @type {HTMLTemplateElement} */ (template)?.content?.cloneNode(true)
       );
