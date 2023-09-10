@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "serve": "live-server --port=8080 --host=localhost --mount=/:src"
+  },
+  "dependencies": {
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-html": "^7.1.0",
+    "live-server": "^1.2.2",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2",
+    "eslint": ">=5.16.0",
+    "eslint-config-google": "^0.14.0"
+  }
+}
