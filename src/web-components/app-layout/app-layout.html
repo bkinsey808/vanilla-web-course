@@ -1,0 +1,35 @@
+<template id="app-layout">
+  <style>
+    /* stackblitz needs this dummy style tag, otherwise it destroys first style rule */
+  </style>
+  <style>
+    .layout {
+      height: 100vh; /* layout should fit entire viewport */
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      grid-template-areas: "header" "main" "footer";
+    }
+
+    app-header {
+      grid-area: header;
+    }
+
+    main {
+      grid-area: main;
+      padding: 1rem;
+      overflow: auto;
+    }
+
+    app-footer {
+      grid-area: footer;
+    }
+  </style>
+
+  <div class="layout">
+    <app-header></app-header>
+    <main>
+      <slot></slot>
+    </main>
+    <app-footer></app-footer>
+  </div>
+</template>

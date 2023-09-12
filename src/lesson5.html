@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="scripts.js"></script>
+    <style>
+      code {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+
+        & p {
+          font-family: initial;
+          margin: 0;
+        }
+
+        & details {
+          cursor: pointer;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <app-layout>
+      <h1>Lesson 5: Anatomy of an HTML Document</h1>
+
+      <p>Click on a line of code to learn more.</p>
+      <div class="document-wrapper">
+        <code>
+          <details>
+            <summary>&lt;!doctype html&gt;</summary>
+            <p>test</p>
+          </details>
+          <details>
+            <summary>&lt;html lang="en"&gt;</summary>
+            <p>test</p>
+          </details>
+          <details>
+            <summary>&lt;head&gt;</summary>
+            <p>test</p>
+          </details>
+          <details>
+            <summary>&nbsp;&nbsp;&lt;title&gt;Home&lt;/title&gt;</summary>
+            <p>test</p>
+          </details>
+          <details>
+            <summary>&nbsp;&nbsp;&lt;meta charset="UTF-8" /&gt;</summary>
+            <p>test</p>
+          </details>
+          <details>
+            <summary>
+              &nbsp;&nbsp;&lt;meta name="viewport" content="width=device-width"
+              /&gt;
+            </summary>
+            <p>test</p>
+          </details>
+          <details>
+            <summary>
+              &nbsp;&nbsp;&lt;link rel="stylesheet" href="styles.css" /&gt;
+            </summary>
+            <p>test</p>
+          </details>
+          <details>
+            <summary>
+              &nbsp;&nbsp;&lt;script type="module"
+              src="scripts.js"&gt;&lt;/script&gt;
+            </summary>
+            <p>test</p>
+          </details>
+          <details>
+            <summary>&lt;/head&gt;</summary>
+            <p>
+              <img
+                src="https://tattoo-ideas.com/wp-content/uploads/2014/03/Code-Tattoo.jpg"
+              />
+            </p>
+          </details>
+          <details>
+            <summary>&lt;body&gt;</summary>
+            <p>test</p>
+          </details>
+          <details>
+            <summary>Hello World!</summary>
+            <p>test</p>
+          </details>
+          <details>
+            <summary>&lt;/body&gt;</summary>
+            <p>test</p>
+          </details>
+          <details>
+            <summary>&lt;/html&gt;</summary>
+            <p>test</p>
+          </details>
+        </code>
+      </div>
+      <next-lesson-button></next-lesson-button>
+    </app-layout>
+  </body>
+</html>
