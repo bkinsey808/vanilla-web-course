@@ -15,6 +15,14 @@ body {
   --color-content: green;
   --color-element: violet;
 
+  --color-url: blue;
+  --color-schema: red;
+  --color-domain: purple;
+  --color-port: green;
+  --color-path: violet;
+  --color-query-parameters: orange;
+  --color-fragment: dodgerblue;
+
   height: 100%;
 }
 
@@ -32,6 +40,34 @@ body {
 
 .content {
   color: var(--color-content);
+}
+
+.url {
+  color: var(--color-url);
+}
+
+.schema {
+  color: var(--color-schema);
+}
+
+.domain {
+  color: var(--color-domain);
+}
+
+.port {
+  color: var(--color-port);
+}
+
+.path {
+  color: var(--color-path);
+}
+
+.query-parameters {
+  color: var(--color-query-parameters);
+}
+
+.fragment {
+  color: var(--color-fragment);
 }
 
 /* mark {

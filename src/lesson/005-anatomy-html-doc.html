@@ -27,198 +27,201 @@
   </head>
   <body>
     <app-layout>
-      <lesson-heading></lesson-heading>
-
-      <p>Click on a line of code to learn more.</p>
-      <div class="document-wrapper">
-        <code class="html-document">
-          <details>
-            <summary><span class="tag">&lt;!doctype html&gt;</span></summary>
-            <p>
-              A required preamble used to define the HTML version. The current
-              HTML version is 5.
-            </p>
-          </details>
-          <details>
-            <summary>
-              <span class="tag"
-                >&lt;html <span class="attribute">lang</span>=<span
-                  class="attribute-value"
-                  >"en"</span
-                >&gt;</span
-              >
-            </summary>
-            <p>
-              The opening tab of the root element that wraps all the content of
-              document.
-            </p>
-          </details>
-          <details>
-            <summary><span class="tag">&lt;head&gt;</span></summary>
-            <p>
-              Container element for content you want to include on the HTML page
-              that <em>isn't</em> the content you are showing to your page's
-              viewers. This includes things like keywords and a page description
-              that you want to appear in search results, CSS to style content,
-              character set declarations, and more.
-            </p>
-          </details>
-          <details>
-            <summary>
-              <span class="tag"
-                >&nbsp;&nbsp;&lt;title&gt;<span class="content">Home</span
-                >&lt;/title&gt;</span
-              >
-            </summary>
-            <p>
-              The title of the page. This is what appears in the browser tab.
-            </p>
-          </details>
-          <details>
-            <summary>
-              &nbsp;&nbsp;&lt;<span class="tag"
-                >meta <span class="attribute">charset</span>=<span
-                  class="attribute-value"
-                  >"UTF-8"</span
+      <lesson-page-layout>
+        <p>Click on a line of code to learn more.</p>
+        <div class="document-wrapper">
+          <code class="html-document">
+            <details>
+              <summary><span class="tag">&lt;!doctype html&gt;</span></summary>
+              <p>
+                A required preamble used to define the HTML version. The current
+                HTML version is 5.
+              </p>
+            </details>
+            <details>
+              <summary>
+                <span class="tag"
+                  >&lt;html <span class="attribute">lang</span>=<span
+                    class="attribute-value"
+                    >"en"</span
+                  >&gt;</span
                 >
-                /&gt;</span
-              >
-            </summary>
-            <p>
-              The character set of the page. UTF-8 is the default character set
-              that supports most languages.
-            </p>
-          </details>
-          <details>
-            <summary>
-              &nbsp;&nbsp;&lt;<span class="tag"
-                >meta <span class="attribute">name</span>=<span
-                  class="attribute-value"
-                  >"viewport"</span
+              </summary>
+              <p>
+                The opening tab of the root element that wraps all the content
+                of document.
+              </p>
+            </details>
+            <details>
+              <summary><span class="tag">&lt;head&gt;</span></summary>
+              <p>
+                Container element for content you want to include on the HTML
+                page that <em>isn't</em> the content you are showing to your
+                page's viewers. This includes things like keywords and a page
+                description that you want to appear in search results, CSS to
+                style content, character set declarations, and more.
+              </p>
+            </details>
+            <details>
+              <summary>
+                <span class="tag"
+                  >&nbsp;&nbsp;&lt;title&gt;<span class="content">Home</span
+                  >&lt;/title&gt;</span
                 >
-                <span class="attribute">content</span>=<span
-                  class="attribute-value"
-                  >"width=device-width"</span
+              </summary>
+              <p>
+                The title of the page. This is what appears in the browser tab.
+              </p>
+            </details>
+            <details>
+              <summary>
+                &nbsp;&nbsp;&lt;<span class="tag"
+                  >meta <span class="attribute">charset</span>=<span
+                    class="attribute-value"
+                    >"UTF-8"</span
+                  >
+                  /&gt;</span
                 >
-                /&gt;</span
-              >
-            </summary>
-            <p>
-              Viewport means the part of the web page that you can see. The
-              viewport meta tag tells the browser how to scale the page to fit
-              the device. The
-              <code
-                ><span class="attribute">width</span>=<span
-                  class="attribute-value"
-                  >"device-width"</span
-                ></code
-              >
-              part sets the width of the page to follow the screen-width of the
-              device (which will vary depending on the device).
-            </p>
-          </details>
-          <details>
-            <summary>
-              &nbsp;&nbsp;&lt;<span class="tag"
-                >link <span class="attribute">rel</span>="stylesheet"
-                <span class="attribute">href</span>="styles.css" /&gt;</span
-              >
-            </summary>
-            <p>
-              This is how you link to a CSS file. The
-              <code
-                ><span class="attribute">rel</span>=<span
-                  class="attribute-value"
-                  >"stylesheet"</span
-                ></code
-              >
-              part tells the browser that this is a stylesheet. A stylesheet is
-              a file which tells a browser how to render a page The
-              <code
-                ><span class="attribute">href</span>=<span
-                  class="attribute-value"
-                  >"styles.css"</span
-                ></code
-              >
-              part tells the browser where to find the CSS file.
-              <!-- // cspell:disable -->
-              <span class="attribute">href</span> stands for <u>h</u>ypertext
-              <u>ref</u>erence.
-              <!-- // cspell:enable -->
-            </p>
-          </details>
-          <details>
-            <summary>
-              &nbsp;&nbsp;<span class="tag"
-                >&lt;script <span class="attribute">type</span>=<span
-                  class="attribute-value"
-                  >"module"</span
+              </summary>
+              <p>
+                The character set of the page. UTF-8 is the default character
+                set that supports most languages.
+              </p>
+            </details>
+            <details>
+              <summary>
+                &nbsp;&nbsp;&lt;<span class="tag"
+                  >meta <span class="attribute">name</span>=<span
+                    class="attribute-value"
+                    >"viewport"</span
+                  >
+                  <span class="attribute">content</span>=<span
+                    class="attribute-value"
+                    >"width=device-width"</span
+                  >
+                  /&gt;</span
                 >
-                <span class="attribute">src</span>=<span class="attribute-value"
-                  >"scripts.js"</span
-                >&gt;&lt;/script&gt;</span
-              >
-            </summary>
-            <p>
-              This is how you link to a JavaScript file. The
-              <code
-                ><span class="attribute">type</span>=<span
-                  class="attribute-value"
-                  >"module"</span
-                ></code
-              >
-              part tells the browser that this is a JavaScript module, and can
-              use modern syntax like the
-              <code>import</code> keyword. A JavaScript module is a file which
-              contains JavaScript code. The
-              <code
-                ><span class="attribute">src</span>=<span
-                  class="attribute-value"
-                  >"scripts.js"</span
-                ></code
-              >
-              part tells the browser where to find the JavaScript file.
-            </p>
-          </details>
-          <details>
-            <summary><span class="tag">&lt;/head&gt;</span></summary>
-            <p>
-              The closing tag of the head element. This is how you tell the
-              browser that you are done adding content to the head element.
-            </p>
-            <img
-              src="https://tattoo-ideas.com/wp-content/uploads/2014/03/Code-Tattoo.jpg"
-            />
-          </details>
-          <details>
-            <summary><span class="tag">&lt;body&gt;</span></summary>
-            <p>
-              Container element for content you want to include on the HTML page
-              that <em>is</em> the content you are showing to your page's
-              viewers. This includes things like text, images, videos, and more.
-            </p>
-          </details>
-          <details>
-            <summary><span class="content">Hello World!</span></summary>
-            <p>The content of the page. This is what appears in the browser.</p>
-          </details>
-          <details>
-            <summary><span class="tag">&lt;/body&gt;</span></summary>
-            <p>
-              The closing tag of the body element. This is how you tell the
-              browser that you are done adding content to the body element.
-            </p>
-          </details>
-          <details>
-            <summary><span class="tag">&lt;/html&gt;</span></summary>
-            <p>
-              The closing tag of the root element. This is how you tell the
-              browser that you are done adding content to the root element.
-            </p>
-          </details>
-        </code>
-      </div>
-      <next-lesson-button></next-lesson-button>
+              </summary>
+              <p>
+                Viewport means the part of the web page that you can see. The
+                viewport meta tag tells the browser how to scale the page to fit
+                the device. The
+                <code
+                  ><span class="attribute">width</span>=<span
+                    class="attribute-value"
+                    >"device-width"</span
+                  ></code
+                >
+                part sets the width of the page to follow the screen-width of
+                the device (which will vary depending on the device).
+              </p>
+            </details>
+            <details>
+              <summary>
+                &nbsp;&nbsp;&lt;<span class="tag"
+                  >link <span class="attribute">rel</span>="stylesheet"
+                  <span class="attribute">href</span>="styles.css" /&gt;</span
+                >
+              </summary>
+              <p>
+                This is how you link to a CSS file. The
+                <code
+                  ><span class="attribute">rel</span>=<span
+                    class="attribute-value"
+                    >"stylesheet"</span
+                  ></code
+                >
+                part tells the browser that this is a stylesheet. A stylesheet
+                is a file which tells a browser how to render a page The
+                <code
+                  ><span class="attribute">href</span>=<span
+                    class="attribute-value"
+                    >"styles.css"</span
+                  ></code
+                >
+                part tells the browser where to find the CSS file.
+                <!-- // cspell:disable -->
+                <span class="attribute">href</span> stands for <u>h</u>ypertext
+                <u>ref</u>erence.
+                <!-- // cspell:enable -->
+              </p>
+            </details>
+            <details>
+              <summary>
+                &nbsp;&nbsp;<span class="tag"
+                  >&lt;script <span class="attribute">type</span>=<span
+                    class="attribute-value"
+                    >"module"</span
+                  >
+                  <span class="attribute">src</span>=<span
+                    class="attribute-value"
+                    >"scripts.js"</span
+                  >&gt;&lt;/script&gt;</span
+                >
+              </summary>
+              <p>
+                This is how you link to a JavaScript file. The
+                <code
+                  ><span class="attribute">type</span>=<span
+                    class="attribute-value"
+                    >"module"</span
+                  ></code
+                >
+                part tells the browser that this is a JavaScript module, and can
+                use modern syntax like the
+                <code>import</code> keyword. A JavaScript module is a file which
+                contains JavaScript code. The
+                <code
+                  ><span class="attribute">src</span>=<span
+                    class="attribute-value"
+                    >"scripts.js"</span
+                  ></code
+                >
+                part tells the browser where to find the JavaScript file.
+              </p>
+            </details>
+            <details>
+              <summary><span class="tag">&lt;/head&gt;</span></summary>
+              <p>
+                The closing tag of the head element. This is how you tell the
+                browser that you are done adding content to the head element.
+              </p>
+              <img
+                src="https://tattoo-ideas.com/wp-content/uploads/2014/03/Code-Tattoo.jpg"
+              />
+            </details>
+            <details>
+              <summary><span class="tag">&lt;body&gt;</span></summary>
+              <p>
+                Container element for content you want to include on the HTML
+                page that <em>is</em> the content you are showing to your page's
+                viewers. This includes things like text, images, videos, and
+                more.
+              </p>
+            </details>
+            <details>
+              <summary><span class="content">Hello World!</span></summary>
+              <p>
+                The content of the page. This is what appears in the browser.
+              </p>
+            </details>
+            <details>
+              <summary><span class="tag">&lt;/body&gt;</span></summary>
+              <p>
+                The closing tag of the body element. This is how you tell the
+                browser that you are done adding content to the body element.
+              </p>
+            </details>
+            <details>
+              <summary><span class="tag">&lt;/html&gt;</span></summary>
+              <p>
+                The closing tag of the root element. This is how you tell the
+                browser that you are done adding content to the root element.
+              </p>
+            </details>
+          </code>
+        </div>
+      </lesson-page-layout>
     </app-layout>
   </body>
 </html>

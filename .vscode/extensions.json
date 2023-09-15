@@ -3,6 +3,7 @@
     "esbenp.prettier-vscode",
     "ms-vscode.live-server",
     "anseki.vscode-color",
-    "streetsidesoftware.code-spell-checker"
+    "streetsidesoftware.code-spell-checker",
+    "christian-kohler.path-intellisense"
   ]
 }

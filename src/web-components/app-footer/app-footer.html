@@ -7,10 +7,16 @@
       background-color: #333;
       color: #fff;
       padding: 1rem;
+      display: flex;
+      justify-content: space-between;
     }
   </style>
 
   <footer>
-    <next-lesson-button></next-lesson-button>
+    <div>
+      <lesson-button type="next"></lesson-button>
+      <lesson-button type="prev"></lesson-button>
+    </div>
+    <jump-to-lesson></jump-to-lesson>
   </footer>
 </template>
