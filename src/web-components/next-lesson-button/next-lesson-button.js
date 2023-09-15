@@ -1,5 +1,4 @@
-import { getCurrentLessonNumber } from "../../scripts.js";
-import { shadowAppendTemplate } from "../../utils.js";
+import { shadowAppendTemplate, getLessonNumber, lessons } from "../../utils.js";
 
 const TAG = "next-lesson-button";
 
@@ -21,12 +20,30 @@ class NextLessonButton extends HTMLElement {
         shadowRoot.querySelector("button")
       );
 
-      const lessonNumber = getCurrentLessonNumber();
-      this.button.innerHTML = `Continue to Lesson ${lessonNumber + 1}`;
+      const lessonNumber = getLessonNumber();
+      if (lessonNumber > lessons.length - 1) {
+        this.button.innerHTML = "Back to Home";
+        this.button?.addEventListener("click", () => {
+          window.location.href = "/";
+        });
+        return;
+      }
+
+      if (!lessonNumber) {
+        this.button.style.display = "none";
+        return;
+      }
+
+      const { key, title } = lessons[lessonNumber];
+      this.button.innerHTML = `Continue to Lesson ${
+        lessonNumber + 1
+      }: ${title}`;
 
       this.button?.addEventListener("click", () => {
-        // nevigate to the next lesson
-        window.location.href = `/lesson${lessonNumber + 1}.html`;
+        window.location.href = `/lesson/${String(lessonNumber + 1).padStart(
+          3,
+          "0"
+        )}-${key}.html`;
       });
     });
   }

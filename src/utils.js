@@ -20,7 +20,8 @@ const webComponentTemplatePromises = {};
  * @param {string} templateName
  */
 const getWebComponentTemplate = async (templateName) => {
-  const templatePath = `web-components/${templateName}/${templateName}.html`;
+  const origin = new URL(window.location.href).origin;
+  const templatePath = `${origin}/web-components/${templateName}/${templateName}.html`;
   await insertHtml(templatePath);
   const el = Promise.resolve(
     /** @type {HTMLTemplateElement | null} */ (
@@ -46,4 +47,37 @@ export const shadowAppendTemplate = async (shadowRoot, templateName) => {
   if (clonedNode) {
     shadowRoot.append(clonedNode);
   }
+};
+
+export const lessons = [
+  {
+    key: "hello-world",
+    title: "Hello World!",
+  },
+  {
+    key: "browser-dev-tools",
+    title: "Browser Dev Tools",
+  },
+  {
+    key: "vanilla-tech-stack",
+    title: "Vanilla Tech Stack",
+  },
+  {
+    key: "anatomy-html-element",
+    title: "Anatomy of an HTML Element",
+  },
+  {
+    key: "anatomy-html-doc",
+    title: "Anatomy of an HTML Document",
+  },
+  {
+    key: "internal-links",
+    title: "Internal Links",
+  },
+];
+
+export const getLessonNumber = () => {
+  const { pathname } = new URL(window.location.href);
+  const digits = pathname.match(/\d+/)?.[0];
+  return parseInt(digits ?? "", 10);
 };

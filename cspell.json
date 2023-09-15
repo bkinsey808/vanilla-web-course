@@ -1,0 +1,9 @@
+{
+  "version": "0.2",
+  "ignorePaths": ["tsconfig.json"],
+  "dictionaryDefinitions": [],
+  "dictionaries": [],
+  "words": ["stackblitz", "Undock"],
+  "ignoreWords": [],
+  "import": []
+}

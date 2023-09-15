@@ -7,7 +7,31 @@ body {
   font-family: system-ui, sans-serif;
   color: black;
   background-color: white;
-  --color-red: #b35959;
+  --color-red: #ac3b3b;
+
+  --color-tag: blue;
+  --color-attribute: red;
+  --color-attribute-value: purple;
+  --color-content: green;
+  --color-element: violet;
+
+  height: 100%;
+}
+
+.tag {
+  color: var(--color-tag);
+}
+
+.attribute {
+  color: var(--color-attribute);
+}
+
+.attribute-value {
+  color: var(--color-attribute-value);
+}
+
+.content {
+  color: var(--color-content);
 }
 
 /* mark {

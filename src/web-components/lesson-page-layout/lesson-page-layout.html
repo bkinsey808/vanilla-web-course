@@ -1,0 +1,16 @@
+<template id="lesson-page-layout">
+  <style>
+    /* stackblitz needs this dummy style tag, otherwise it destroys first style rule */
+  </style>
+  <style>
+    :host {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+  </style>
+
+  <lesson-heading></lesson-heading>
+  <slot></slot>
+  <next-lesson-button></next-lesson-button>
+</template>

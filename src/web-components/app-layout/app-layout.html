@@ -3,33 +3,39 @@
     /* stackblitz needs this dummy style tag, otherwise it destroys first style rule */
   </style>
   <style>
-    .layout {
+    :host {
       height: 100vh; /* layout should fit entire viewport */
-      display: grid;
-      grid-template-rows: auto 1fr auto;
-      grid-template-areas: "header" "main" "footer";
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
     }
 
     app-header {
-      grid-area: header;
+      flex-shrink: 1;
     }
 
-    main {
-      grid-area: main;
+    .main-wrapper {
       padding: 1rem;
+      flex-grow: 1;
       overflow: auto;
     }
 
+    main {
+      width: calc(min(50rem, 100vw) - 2rem);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     app-footer {
-      grid-area: footer;
+      flex-shrink: 1;
     }
   </style>
 
-  <div class="layout">
-    <app-header></app-header>
+  <app-header></app-header>
+  <div class="main-wrapper">
     <main>
       <slot></slot>
     </main>
-    <app-footer></app-footer>
   </div>
+  <app-footer></app-footer>
 </template>

@@ -1,24 +1,16 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Home</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="scripts.js"></script>
+    <link rel="stylesheet" href="../styles.css" />
+    <script type="module" src="../scripts.js"></script>
     <style>
       .element-wrapper {
-        width: fit-content;
-        margin: auto;
+        padding-left: 2rem;
         white-space: nowrap;
-        text-align: center;
         font-size: 2rem;
         height: 13em;
-        --color-start-tag: blue;
-        --color-attribute: red;
-        --color-attribute-value: purple;
-        --color-content: green;
-        --color-element: violet;
 
         & * {
           position: relative;
@@ -57,8 +49,8 @@
       }
 
       .start-tag {
-        color: var(--color-start-tag);
-        border-color: var(--color-start-tag);
+        color: var(--color-tag);
+        border-color: var(--color-tag);
 
         &:before {
           height: 1rem !important;
@@ -102,8 +94,8 @@
       }
 
       .end-tag {
-        color: var(--color-start-tag);
-        border-color: var(--color-start-tag);
+        color: var(--color-tag);
+        border-color: var(--color-tag);
 
         &:after {
           content: "end tag";
@@ -132,7 +124,7 @@
   </head>
   <body>
     <app-layout>
-      <h1>Lesson 4: Anatomy of an HTML Element</h1>
+      <lesson-heading></lesson-heading>
 
       <div class="element-wrapper">
         <code class="element">
