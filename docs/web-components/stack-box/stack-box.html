@@ -1,0 +1,86 @@
+<template id="stack-box">
+  <style>
+    /* stackblitz needs this dummy style tag, otherwise it destroys first style rule */
+  </style>
+  <style>
+    .wrapper {
+      position: relative;
+      overflow: hidden;
+
+      --top-height: 3;
+      --right-width: 3;
+      --top-height-rem: calc(var(--top-height) * 1rem);
+      --right-width-rem: calc(var(--right-width) * 1rem);
+      --stack-box-color: #333;
+    }
+
+    .line {
+      position: absolute;
+      border-top: thin solid var(--stack-box-color);
+    }
+
+    .diagonal-line {
+      width: calc(var(--top-height) * var(--right-width) * 1rem);
+      transform-origin: top left;
+      transform: rotate(
+        calc(-1 * atan(var(--top-height) / var(--right-width)))
+      );
+    }
+
+    .front-box {
+      border: thin solid var(--stack-box-color);
+      width: calc(100% - var(--right-width-rem));
+      height: calc(100% - var(--top-height-rem));
+      margin-top: var(--top-height-rem);
+    }
+
+    section {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    .upper-left-diagonal-line {
+      top: var(--top-height-rem);
+      left: 0;
+    }
+
+    .upper-right-diagonal-line {
+      top: var(--top-height-rem);
+      left: calc(100% - var(--right-width-rem));
+    }
+
+    .lower-right-diagonal-line {
+      bottom: 0;
+      left: calc(100% - var(--right-width-rem));
+    }
+
+    .top-back-line {
+      top: 0;
+      right: 0;
+      width: calc(100% - var(--right-width-rem));
+    }
+
+    .righ-back-line {
+      top: 0;
+      right: 0;
+      height: calc(100% - var(--top-height-rem));
+      width: thin;
+      border-left: thin solid var(--stack-box-color);
+    }
+
+    /* lines should make the illusion of a 3d box */
+  </style>
+
+  <div class="wrapper">
+    <div class="line diagonal-line upper-left-diagonal-line"></div>
+    <div class="line diagonal-line upper-right-diagonal-line"></div>
+    <div class="line diagonal-line lower-right-diagonal-line"></div>
+    <div class="line righ-back-line"></div>
+    <div class="line top-back-line"></div>
+    <div class="front-box">
+      <section>
+        <slot></slot>
+      </section>
+    </div>
+  </div>
+</template>

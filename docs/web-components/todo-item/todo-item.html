@@ -1,0 +1,25 @@
+<template id="todo-item">
+  <style>
+    /* stackblitz needs this dummy style tag, otherwise it destroys first style rule */
+  </style>
+  <style>
+    label {
+      color: var(--color-red, red);
+      display: block;
+    }
+
+    .description {
+      font-size: 0.65rem;
+      font-weight: lighter;
+      color: #777;
+    }
+  </style>
+
+  <label>
+    <input type="checkbox" />
+    <slot></slot>
+    <span class="description">
+      <slot name="description"></slot>
+    </span>
+  </label>
+</template>

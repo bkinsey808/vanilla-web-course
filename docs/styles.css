@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  color: black;
+  background-color: white;
+  --color-red: #ac3b3b;
+
+  --color-tag: blue;
+  --color-attribute: red;
+  --color-attribute-value: purple;
+  --color-content: green;
+  --color-element: violet;
+
+  --color-url: blue;
+  --color-schema: red;
+  --color-domain: purple;
+  --color-port: green;
+  --color-path: violet;
+  --color-query-parameters: orange;
+  --color-fragment: dodgerblue;
+
+  height: 100%;
+}
+
+.tag {
+  color: var(--color-tag);
+}
+
+.attribute {
+  color: var(--color-attribute);
+}
+
+.attribute-value {
+  color: var(--color-attribute-value);
+}
+
+.content {
+  color: var(--color-content);
+}
+
+.url {
+  color: var(--color-url);
+}
+
+.schema {
+  color: var(--color-schema);
+}
+
+.domain {
+  color: var(--color-domain);
+}
+
+.port {
+  color: var(--color-port);
+}
+
+.path {
+  color: var(--color-path);
+}
+
+.query-parameters {
+  color: var(--color-query-parameters);
+}
+
+.fragment {
+  color: var(--color-fragment);
+}
+
+/* mark {
+  -webkit-animation: 1.5s highlight 1.5s 1 normal forwards;
+  animation: 1.5s highlight 1.5s 1 normal forwards;
+  background-color: none;
+  background: linear-gradient(90deg, #7efff5 50%, rgba(255, 255, 255, 0) 50%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+}
+
+​ @-webkit-keyframes highlight {
+  to {
+    background-position: 0 0;
+  }
+}
+
+​ @keyframes highlight {
+  to {
+    background-position: 0 0;
+  }
+} */
