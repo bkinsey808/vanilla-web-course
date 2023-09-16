@@ -1,4 +1,4 @@
-import { shadowAppendTemplate } from "../../utils.js";
+import { shadowAppendTemplate } from "../utils.js";
 
 /**
  * @class TodoItem

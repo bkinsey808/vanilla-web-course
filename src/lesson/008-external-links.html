@@ -38,20 +38,45 @@
             > </code
           >, then a link to <code>lesson-2.html</code> would be a relative link.
           If you are on the page
-          <code>https://example.com/lessons/lesson-1.html</code>, then a link to
-          <code>https://example.com/lessons/lesson-2.html</code> would be an
-          absolute link.
+          <code>
+            <span class="url"
+              ><span class="schema">https://</span
+              ><span class="domain">example.com</span
+              ><span class="path">/lessons/lesson-1.html</span></span
+            ></code
+          >, then a link to
+          <code>
+            <span class="url"
+              ><span class="schema">https://</span
+              ><span class="domain">example.com</span
+              ><span class="path">/lessons/lesson-2.html</span></span
+            ></code
+          >
+          would be an absolute link.
         </p>
 
         <p>
           Relative links can also use the <code>../</code> syntax
           <em>(dot-dot-slash)</em> to point to a page relative to the current
           page, up one level of the directory tree. For example, if you are on
-          the page <code>https://example.com/lessons/lesson-1.html</code>, then
-          a link to
-          <code>../test.html</code>
-          <em>(two dot-dot-slashes)</em> would be a relative link that points to
-          <code>https://example.com/test.html</code>.
+          the page
+          <code>
+            <span class="url"
+              ><span class="schema">https://</span
+              ><span class="domain">example.com</span
+              ><span class="path">/lessons/lesson-1.html</span></span
+            >, then a link to
+            <code>../test.html</code>
+            <em>(two dot-dot-slashes)</em> would be a relative link that points
+            to
+            <code>
+              <span class="url"
+                ><span class="schema">https://</span
+                ><span class="domain">example.com</span
+                ><span class="path">/test.html</span></span
+              ></code
+            > </code
+          >.
         </p>
 
         <p>
@@ -63,22 +88,21 @@
             ></code
           >
           attribute to the anchor element. For example:
-
-          <code
-            ><span class="tag"
-              >&lt;a <span class="attribute">href</span>=<span
-                class="attribute-value"
-                >"https://example.com"</span
-              >
-              <span class="attribute">target</span>=<span
-                class="attribute-value"
-                >"_blank"</span
-              >&gt;<span class="content"
-                >Click here to open example.com in a new tab</span
-              >&lt;/a&gt;</span
-            ></code
-          >
         </p>
+
+        <code
+          ><span class="tag"
+            >&lt;a <span class="attribute">href</span>=<span
+              class="attribute-value"
+              >"https://example.com"</span
+            >
+            <span class="attribute">target</span>=<span class="attribute-value"
+              >"_blank"</span
+            >&gt;<span class="content"
+              >Click here to open example.com in a new tab</span
+            >&lt;/a&gt;</span
+          ></code
+        >
       </lesson-page-layout>
     </app-layout>
   </body>

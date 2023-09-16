@@ -1,4 +1,5 @@
-import { shadowAppendTemplate, lessons, getLessonNumber } from "../../utils.js";
+import { getLessonNumber, lessons } from "../../lesson/utils.js";
+import { shadowAppendTemplate } from "../utils.js";
 
 const TAG = "lesson-heading";
 

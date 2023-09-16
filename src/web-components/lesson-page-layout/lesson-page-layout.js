@@ -1,4 +1,5 @@
-import { getLessonNumber, lessons, shadowAppendTemplate } from "../../utils.js";
+import { getLessonNumber, lessons } from "../../lesson/utils.js";
+import { shadowAppendTemplate } from "../utils.js";
 
 const TAG = "lesson-page-layout";
 
@@ -14,13 +15,16 @@ class LessonPageLayout extends HTMLElement {
   constructor() {
     super();
     const shadowRoot = this.attachShadow({ mode: "open" });
-    shadowAppendTemplate(shadowRoot, TAG);
+
     const lessonNumber = getLessonNumber();
     console.log({ lessonNumber });
     const { title } = lessons[lessonNumber - 1];
+    const fullTitle = `Lesson ${lessonNumber}: ${title}`;
 
-    // set the title of the page
-    document.title = `Lesson ${lessonNumber}: ${title}`;
+    shadowAppendTemplate(shadowRoot, TAG).then(() => {
+      // set the title of the page
+      document.title = fullTitle;
+    });
   }
 }
 

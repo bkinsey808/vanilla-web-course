@@ -1,4 +1,4 @@
-import { shadowAppendTemplate } from "../../utils.js";
+import { shadowAppendTemplate } from "../utils.js";
 
 const TAG = "app-layout";
 
@@ -14,7 +14,30 @@ class AppLayout extends HTMLElement {
   constructor() {
     super();
     const shadowRoot = this.attachShadow({ mode: "open" });
-    shadowAppendTemplate(shadowRoot, TAG);
+    shadowAppendTemplate(shadowRoot, TAG).then(() => {
+      this.main = shadowRoot.querySelector("main");
+    });
+  }
+
+  /**
+   * list of observed attributes
+   */
+  static get observedAttributes() {
+    return ["aria-label"];
+  }
+
+  /**
+   * called when observed attribute is changed
+   * @param {string} name
+   * @param {string} oldValue
+   * @param {string} newValue
+   */
+  attributeChangedCallback(name, oldValue, newValue) {
+    switch (name) {
+      case "aria-label":
+        // this.main?.setAttribute("aria-label", newValue);
+        break;
+    }
   }
 }
 

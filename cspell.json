@@ -3,7 +3,7 @@
   "ignorePaths": ["tsconfig.json"],
   "dictionaryDefinitions": [],
   "dictionaries": [],
-  "words": ["stackblitz", "Undock"],
+  "words": ["labelledby", "stackblitz", "Undock"],
   "ignoreWords": [],
   "import": []
 }

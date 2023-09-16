@@ -1,9 +1,5 @@
-import {
-  shadowAppendTemplate,
-  getLessonNumber,
-  lessons,
-  getLessonPath,
-} from "../../utils.js";
+import { getLessonNumber, lessons, getLessonPath } from "../../lesson/utils.js";
+import { shadowAppendTemplate } from "../utils.js";
 
 const TAG = "jump-to-lesson";
 
