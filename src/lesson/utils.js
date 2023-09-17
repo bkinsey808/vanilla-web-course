@@ -8,6 +8,10 @@ export const lessons = [
     title: "Browser Dev Tools",
   },
   {
+    key: "hack-this-course",
+    title: "Hack This Course",
+  },
+  {
     key: "vanilla-tech-stack",
     title: "Vanilla Tech Stack",
   },
@@ -20,16 +24,20 @@ export const lessons = [
     title: "Anatomy of an HTML Document",
   },
   {
-    key: "internal-links",
-    title: "Internal Links",
-  },
-  {
     key: "anatomy-url",
     title: "Anatomy of a URL",
   },
   {
+    key: "internal-links",
+    title: "Internal Links",
+  },
+  {
     key: "external-links",
     title: "External Links",
+  },
+  {
+    key: "html-heading-elements",
+    title: "HTML Heading Elements",
   },
 ];
 

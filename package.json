@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "serve": "live-server --port=8080 --host=localhost --mount=/:src",
+    "start": "live-server --port=8080 --host=localhost --mount=/:src",
     "deploy": "vercel --prod"
   },
   "dependencies": {

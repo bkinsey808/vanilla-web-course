@@ -1,9 +1,16 @@
 {
   "version": "0.2",
-  "ignorePaths": ["tsconfig.json"],
+  "ignorePaths": [
+    "tsconfig.json"
+  ],
   "dictionaryDefinitions": [],
   "dictionaries": [],
-  "words": ["labelledby", "stackblitz", "Undock"],
+  "words": [
+    "Codeflow",
+    "labelledby",
+    "stackblitz",
+    "Undock"
+  ],
   "ignoreWords": [],
   "import": []
 }
