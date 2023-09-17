@@ -16,8 +16,6 @@ class AppLayout extends HTMLElement {
     const shadowRoot = this.attachShadow({ mode: "open" });
     shadowAppendTemplate(shadowRoot, TAG).then(() => {
       this.main = shadowRoot.querySelector("main");
-      // remove class hide from app-layout
-      this.classList.remove("hide");
     });
   }
 

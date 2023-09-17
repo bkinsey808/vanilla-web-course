@@ -14,7 +14,10 @@ class AppHeader extends HTMLElement {
   constructor() {
     super();
     const shadowRoot = this.attachShadow({ mode: "open" });
-    shadowAppendTemplate(shadowRoot, TAG);
+    shadowAppendTemplate(shadowRoot, TAG).then(() => {
+      // remove class hide from body element
+      document.body.classList.remove("hide");
+    });
   }
 }
 
