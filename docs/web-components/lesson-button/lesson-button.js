@@ -32,7 +32,10 @@ class LessonButton extends HTMLElement {
       ) {
         this.button.innerHTML = "Back to Home";
         this.button?.addEventListener("click", () => {
-          window.location.href = "/";
+          const origin = new URL(window.location.href).origin;
+          window.location.href = `${origin.endsWith(
+            "github.io" ? "vanilla-web-course" : ""
+          )}/`;
         });
         return;
       }
