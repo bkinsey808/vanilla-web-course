@@ -24,6 +24,7 @@ const getWebComponentTemplate = async (templateName) => {
   const templatePath = `${origin}${
     origin.endsWith("github.io") ? "/vanilla-web-course" : ""
   }/web-components/${templateName}/${templateName}.html`;
+  console.log({ origin, templatePath });
   await insertHtml(templatePath);
   const el = Promise.resolve(
     /** @type {HTMLTemplateElement | null} */ (
