@@ -26,11 +26,17 @@ class LessonButton extends HTMLElement {
       const lessonNumber = getLessonNumber();
 
       if (!lessonNumber) {
+        this.button.style.display = "none";
         return;
       }
 
       const newLessonNumber =
         type === "next" ? lessonNumber + 1 : lessonNumber - 1;
+
+      if (!lessonNumber || newLessonNumber < 1) {
+        this.button.style.display = "none";
+        return;
+      }
 
       if (
         type === "next" ? lessonNumber > lessons.length - 1 : lessonNumber < 2
@@ -39,11 +45,6 @@ class LessonButton extends HTMLElement {
         this.button?.addEventListener("click", () => {
           window.location.href = "/";
         });
-        return;
-      }
-
-      if (!lessonNumber || newLessonNumber < 1) {
-        this.button.style.display = "none";
         return;
       }
 
