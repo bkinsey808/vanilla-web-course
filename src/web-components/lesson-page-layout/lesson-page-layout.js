@@ -17,7 +17,11 @@ class LessonPageLayout extends HTMLElement {
     const shadowRoot = this.attachShadow({ mode: "open" });
 
     const lessonNumber = getLessonNumber();
-    console.log({ lessonNumber });
+
+    if (!lessonNumber) {
+      return;
+    }
+
     const { title } = lessons[lessonNumber - 1];
     const fullTitle = `Lesson ${lessonNumber}: ${title}`;
 

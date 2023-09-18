@@ -36,27 +36,37 @@ export const lessons = [
     title: "External Links",
   },
   {
-    key: "html-heading-elements",
+    key: "basic-semantic-elements",
+    title: "Basic Semantic Elements",
+  },
+  {
+    key: "heading-elements",
     title: "HTML Heading Elements",
   },
 ];
 
 /**
  * gets the lesson number from the path
- * @return {number}
+ * @param {string=} str
+ * @return {number | undefined}
  */
-export const getLessonNumber = () => {
+export const getLessonNumber = (str) => {
   const { pathname } = new URL(window.location.href);
-  const digits = pathname.match(/\d+/)?.[0];
+  const digits = (str ?? pathname).match(/\d+/)?.[0];
+  if (!digits) {
+    return undefined;
+  }
   return parseInt(digits ?? "", 10);
 };
 
 /**
  * gets the path to a lesson from the lesson number
- * @param {number} lessonNumber
+ * @param {number=} lessonNumber
  * @return {string}
  */
 export const getLessonPath = (lessonNumber) =>
-  `/lesson/${String(lessonNumber).padStart(3, "0")}-${
-    lessons[lessonNumber - 1].key
-  }.html`;
+  lessonNumber === undefined || lessonNumber < 1
+    ? "/"
+    : `/lesson/${String(lessonNumber).padStart(3, "0")}-${
+        lessons[lessonNumber - 1].key
+      }.html`;

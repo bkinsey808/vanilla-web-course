@@ -22,7 +22,6 @@ const webComponentTemplatePromises = {};
 const getWebComponentTemplate = async (templateName) => {
   const origin = new URL(window.location.href).origin;
   const templatePath = `${origin}/web-components/${templateName}/${templateName}.html`;
-  console.log({ origin, templatePath });
   await insertHtml(templatePath);
   const el = Promise.resolve(
     /** @type {HTMLTemplateElement | null} */ (

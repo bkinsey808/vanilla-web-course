@@ -1,0 +1,43 @@
+<template id="lesson-paginator">
+  <style>
+    /* stackblitz needs this dummy style tag, otherwise it destroys first style rule */
+  </style>
+  <style>
+    nav {
+      display: flex;
+      gap: 0.2rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      padding: 0.5rem;
+    }
+
+    button {
+      cursor: pointer;
+      letter-spacing: -0.2rem;
+      display: flex;
+      align-items: end;
+      padding: 0;
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+    input {
+      padding-left: 1rem;
+      width: 3.5rem;
+    }
+  </style>
+
+  <nav>
+    <button id="home"><a href="/">❚◄</a></button></a>
+    <button id="prev"><a>◄</a></button>
+    <input list="lesson-datalist" />
+    <button id="next"><a>►</a></button>
+    <button id="last"><a>►❚</a></button>
+
+    <datalist id="lesson-datalist"></datalist>
+  </nav>
+</template>

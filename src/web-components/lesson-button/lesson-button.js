@@ -24,6 +24,11 @@ class LessonButton extends HTMLElement {
       );
 
       const lessonNumber = getLessonNumber();
+
+      if (!lessonNumber) {
+        return;
+      }
+
       const newLessonNumber =
         type === "next" ? lessonNumber + 1 : lessonNumber - 1;
 
