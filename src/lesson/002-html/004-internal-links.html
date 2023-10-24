@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <script type="module" src="../../scripts.js"></script>
+    <style>
+      .giant-vertical-gap {
+        height: 100rem;
+      }
+    </style>
+  </head>
+  <body class="hide">
+    <app-layout>
+      <a name="top-of-doc"></a>
+      <lesson-page-layout>
+        <p>
+          Hyperlinks are what makes hypertext <em>hyper</em>. On this page we
+          will learn about the anchor element and how to use it to create
+          internal links. The anchor element has an
+          <code><span class="attribute">href</span></code> attribute that
+          specifies the URL of the page you want to link. Additionally, the
+          anchor element can be used to create internal links. Internal links
+          are links that point to a specific location on the current page.
+        </p>
+
+        <p>
+          To create an internal link, you need to create an anchor element with
+          a <code><span class="attribute">name</span></code> attribute. Then you
+          build a link to this named anchor element by creating another anchor
+          element with an
+          <code><span class="attribute">href</span></code> attribute. For
+          example:
+        </p>
+
+        <code
+          ><span class="tag"
+            >&lt;a <span class="attribute">href</span>=<span
+              class="attribute-value"
+              >"#bottom-of-doc"</span
+            >&gt;<span class="content"
+              >Click here to jump to bottom of document</span
+            >&lt;/a&gt;</span
+          ></code
+        >
+        <p>and then put the named anchor somewhere in your document:</p>
+
+        <code
+          ><span class="tag"
+            >&lt;a <span class="attribute">name</span>=<span
+              class="attribute-value"
+              >"bottom-of-doc"</span
+            >&gt;&lt;/a&gt;</span
+          ></code
+        >
+
+        <p>Let's test this:</p>
+
+        <a href="#bottom-of-doc">Click here to jump to bottom of document</a>
+
+        <div class="giant-vertical-gap"></div>
+
+        <p>
+          <a name="bottom-of-doc"></a>
+          This is the bottom of the document. The <code>a</code> element just
+          above this text links to this. It is invisible because it has no
+          content. It is just a marker. But you can see it in the Elements tab
+          of your browser's developer tools. Note the URL has changed in your
+          browser's address bar. It now has a # to mark the anchor. This is also
+          called a fragment identifier.
+        </p>
+
+        <p>Now jump back to the top of the document:</p>
+        <a href="#top-of-doc">Click here to jump to top of document</a>
+      </lesson-page-layout>
+    </app-layout>
+  </body>
+</html>

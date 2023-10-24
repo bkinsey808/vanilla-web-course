@@ -33,17 +33,27 @@ const getWebComponentTemplate = async (templateName) => {
 };
 
 /**
+ * @param {string} templateName
+ * @return {Promise<Node | undefined>}
+ */
+export const getClonedTemplateNode = async (templateName) => {
+  if (!webComponentTemplatePromises[templateName]) {
+    webComponentTemplatePromises[templateName] =
+      getWebComponentTemplate(templateName);
+  }
+
+  const template = await webComponentTemplatePromises[templateName];
+  return template?.content?.cloneNode(true);
+};
+
+/**
  * Appends a template to a shadow root
  * @param {ShadowRoot} shadowRoot
  * @param {string} templateName
  */
 export const shadowAppendTemplate = async (shadowRoot, templateName) => {
-  if (!webComponentTemplatePromises[templateName]) {
-    webComponentTemplatePromises[templateName] =
-      getWebComponentTemplate(templateName);
-  }
-  const template = await webComponentTemplatePromises[templateName];
-  const clonedNode = template?.content?.cloneNode(true);
+  const clonedNode = await getClonedTemplateNode(templateName);
+
   if (clonedNode) {
     shadowRoot.append(clonedNode);
   }

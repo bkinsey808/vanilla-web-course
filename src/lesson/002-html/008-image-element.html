@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <script type="module" src="../../scripts.js"></script>
+    <style>
+      .giant-vertical-gap {
+        height: 100rem;
+      }
+      .warning-icon {
+        width: 3rem;
+        height: auto;
+      }
+      .alert {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        border: medium solid red;
+        border-radius: 0.5rem;
+        background-color: pink;
+      }
+      /* img {
+        max-width: 50%;
+        height: auto;
+        aspect-ratio: 4958 / 6198;
+      } */
+    </style>
+  </head>
+  <body class="hide">
+    <app-layout>
+      <lesson-page-layout>
+        <div class="alert">
+          <img class="warning-icon" src="./warning.svg" alt="Warning" />
+          <div>
+            <strong>Warning:</strong>
+            Non-optimized images can slow down your website. Optimizing images
+            is beyond the scope of this course, and modern frameworks such as
+            Next.js have some built-in image optimization. For a vanilla
+            HTML/JS/CSS website, the basic recommendation is to keep your image
+            files as small as possible.
+          </div>
+        </div>
+        <p>
+          The <code><span class="tag">&lt;img&gt;</span></code> element is used
+          to embed an image in an HTML document. It is a self-closing element,
+          meaning it does not have a closing tag. It has two required
+          attributes:
+        </p>
+
+        <ul>
+          <li>
+            <code><span class="attribute">src</span></code> - the URL of the
+            image
+          </li>
+          <li>
+            <code><span class="attribute">alt</span></code> - a description of
+            the image
+          </li>
+          <img
+            width="50%"
+            height="auto"
+            src="./huge-image.jpg"
+            alt="A huge image"
+          />
+        </ul>
+      </lesson-page-layout>
+    </app-layout>
+  </body>
+</html>

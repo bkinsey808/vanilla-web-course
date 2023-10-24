@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <script type="module" src="../../scripts.js"></script>
+    <style>
+      .giant-vertical-gap {
+        height: 100rem;
+      }
+    </style>
+  </head>
+  <body class="hide">
+    <app-layout>
+      <lesson-page-layout>
+        <p>
+          HTML has six heading elements,
+          <code><span class="tag">&lt;h1&gt;</span></code> through
+          <code><span class="tag">&lt;h6&gt;</span></code
+          >. The <code>&lt;h1&gt;</code> element is the most important heading
+          element, and there should be at most one per document. It is used for
+          the main heading of the document, and if there is a
+          <code>&lt;main&gt;</code> element in the document, the h1 element
+          should be a heading for its content.
+        </p>
+        <p>
+          The subsequent headings are use for subheadings. A subheading must
+          never skip a heading level. For example, if you have an
+          <code>&lt;h2&gt;</code> element, you must have an
+          <code>&lt;h1&gt;</code> element somewhere before it. If you have an
+          <code>&lt;h3&gt;</code> element, you must have an
+          <code>&lt;h2&gt;</code> element somewhere before it, and so on. By
+          following these rules, you:
+        </p>
+
+        <ul>
+          <li>
+            help search engines understand the structure of your page. This is
+            important for SEO (search engine optimization)
+          </li>
+          <li>
+            help screen readers understand the structure of your page. This is
+            important for accessibility.
+          </li>
+        </ul>
+      </lesson-page-layout>
+    </app-layout>
+  </body>
+</html>

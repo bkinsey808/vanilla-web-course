@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <script type="module" src="../../scripts.js"></script>
+    <style>
+      .giant-vertical-gap {
+        height: 100rem;
+      }
+    </style>
+  </head>
+  <body class="hide">
+    <app-layout>
+      <lesson-page-layout>
+        <p>
+          External links are links that point to a different website. For
+          example, the link to the
+          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a"
+            >MDN documentation for the anchor element</a
+          >
+          is an external link. External links are created using the anchor
+          element, just like internal links. The only difference is that the
+          <code><span class="attribute">href</span></code> attribute points to a
+          different page.
+        </p>
+
+        <p>
+          The anchor element can be used to create relative and absolute links.
+          A relative link is a link that points to a page relative to the
+          current page. For example, if you are on the page
+          <code>
+            <span class="url"
+              ><span class="schema">https://</span
+              ><span class="domain">example.com</span
+              ><span class="path">/lessons/lesson-1.html</span></span
+            > </code
+          >, then a link to <code>lesson-2.html</code> would be a relative link.
+          If you are on the page
+          <code>
+            <span class="url"
+              ><span class="schema">https://</span
+              ><span class="domain">example.com</span
+              ><span class="path">/lessons/lesson-1.html</span></span
+            ></code
+          >, then a link to
+          <code>
+            <span class="url"
+              ><span class="schema">https://</span
+              ><span class="domain">example.com</span
+              ><span class="path">/lessons/lesson-2.html</span></span
+            ></code
+          >
+          would be an absolute link.
+        </p>
+
+        <p>
+          Relative links can also use the <code>../</code> syntax
+          <em>(dot-dot-slash)</em> to point to a page relative to the current
+          page, up one level of the directory tree. For example, if you are on
+          the page
+          <code>
+            <span class="url"
+              ><span class="schema">https://</span
+              ><span class="domain">example.com</span
+              ><span class="path">/lessons/lesson-1.html</span></span
+            >, then a link to
+            <code>../test.html</code>
+            <em>(two dot-dot-slashes)</em> would be a relative link that points
+            to
+            <code>
+              <span class="url"
+                ><span class="schema">https://</span
+                ><span class="domain">example.com</span
+                ><span class="path">/test.html</span></span
+              ></code
+            > </code
+          >.
+        </p>
+
+        <p>
+          You can force a link to open in a new tab <em>(or window)</em> by
+          adding the
+          <code
+            ><span class="attribute">target</span>=<span class="attribute-value"
+              >"_blank"</span
+            ></code
+          >
+          attribute to the anchor element. For example:
+        </p>
+
+        <code
+          ><span class="tag"
+            >&lt;a <span class="attribute">href</span>=<span
+              class="attribute-value"
+              >"https://example.com"</span
+            >
+            <span class="attribute">target</span>=<span class="attribute-value"
+              >"_blank"</span
+            >&gt;<span class="content"
+              >Click here to open example.com in a new tab</span
+            >&lt;/a&gt;</span
+          ></code
+        >
+      </lesson-page-layout>
+    </app-layout>
+  </body>
+</html>

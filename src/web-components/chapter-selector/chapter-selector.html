@@ -1,0 +1,26 @@
+<template id="chapter-selector">
+  <style>
+    /* stackblitz needs this dummy style tag, otherwise it destroys first style rule */
+  </style>
+  <style>
+    @import url("../../styles.css");
+
+    :host {
+      background-color: transparent;
+    }
+
+    label {
+      color: #fff;
+    }
+
+    input {
+      padding-left: 0.5rem;
+      width: 7rem;
+      height: 100%;
+    }
+  </style>
+
+  <label for="chapter-input">Chapter:</label>
+  <input id="chapter-input" list="chapter-datalist" />
+  <datalist id="chapter-datalist"></datalist>
+</template>

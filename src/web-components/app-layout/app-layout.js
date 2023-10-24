@@ -18,27 +18,6 @@ class AppLayout extends HTMLElement {
       this.main = shadowRoot.querySelector("main");
     });
   }
-
-  /**
-   * list of observed attributes
-   */
-  static get observedAttributes() {
-    return ["aria-label"];
-  }
-
-  /**
-   * called when observed attribute is changed
-   * @param {string} name
-   * @param {string} oldValue
-   * @param {string} newValue
-   */
-  attributeChangedCallback(name, oldValue, newValue) {
-    switch (name) {
-      case "aria-label":
-        // this.main?.setAttribute("aria-label", newValue);
-        break;
-    }
-  }
 }
 
 customElements.define(TAG, AppLayout);

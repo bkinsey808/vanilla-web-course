@@ -1,0 +1,38 @@
+<template id="lesson-selector">
+  <style>
+    /* stackblitz needs this dummy style tag, otherwise it destroys first style rule */
+  </style>
+  <style>
+    @import url("../../styles.css");
+
+    :host {
+      display: flex;
+      align-items: baseline;
+      gap: 0.25rem;
+      background-color: transparent;
+
+      * > {
+        height: 100% !important;
+      }
+    }
+
+    label {
+      color: #fff;
+    }
+
+    input {
+      padding-left: 0.5rem;
+      flex-grow: 1;
+      height: 100%;
+      max-width: 20rem;
+    }
+  </style>
+
+  <label for="lesson-input">Lesson:</label>
+  <lesson-button type="first" icon="true"></lesson-button>
+  <lesson-button type="prev" icon="true"></lesson-button>
+  <input id="lesson-input" />
+  <lesson-button type="next" icon="true"></lesson-button>
+  <lesson-button type="last" icon="true"></lesson-button>
+  <datalist id="lesson-datalist"></datalist>
+</template>

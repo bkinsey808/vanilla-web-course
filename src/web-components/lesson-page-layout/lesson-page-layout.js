@@ -1,4 +1,4 @@
-import { getLessonNumber, lessons } from "../../lesson/utils.js";
+import { getLessonDataForPath, lessonData } from "../../lesson/utils.js";
 import { shadowAppendTemplate } from "../utils.js";
 
 const TAG = "lesson-page-layout";
@@ -16,16 +16,22 @@ class LessonPageLayout extends HTMLElement {
     super();
     const shadowRoot = this.attachShadow({ mode: "open" });
 
-    const lessonNumber = getLessonNumber();
+    shadowAppendTemplate(shadowRoot, TAG).then(async () => {
+      const chapters = (await lessonData)?.chapters;
 
-    if (!lessonNumber) {
-      return;
-    }
+      if (chapters === undefined) {
+        return;
+      }
 
-    const { title } = lessons[lessonNumber - 1];
-    const fullTitle = `Lesson ${lessonNumber}: ${title}`;
+      const lessonNumber = getLessonDataForPath(chapters)?.lessonNumber;
 
-    shadowAppendTemplate(shadowRoot, TAG).then(() => {
+      if (lessonNumber === undefined) {
+        return;
+      }
+
+      const { title } = chapters[lessonNumber - 1];
+      const fullTitle = `Lesson ${lessonNumber}: ${title}`;
+
       // set the title of the page
       document.title = fullTitle;
     });

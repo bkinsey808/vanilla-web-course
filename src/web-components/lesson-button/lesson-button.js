@@ -1,7 +1,46 @@
-import { getLessonNumber, lessons, getLessonPath } from "../../lesson/utils.js";
-import { shadowAppendTemplate } from "../utils.js";
+import {
+  getLessonDataForPath,
+  getPathFromLessonIndex,
+  lessonData,
+} from "../../lesson/utils.js";
+import { intToRoman, titleCase } from "../../utils.js";
+import { getClonedTemplateNode } from "../utils.js";
+
+/**
+ * @typedef {import("../../lesson/utils.js").Chapter} Chapter
+ */
 
 const TAG = "lesson-button";
+
+/** @typedef {'first'|'last'|'prev'|'next'} Type */
+
+/** @type {{[key in Type]: string}} */
+const icons = {
+  first: "❚◄",
+  last: "►❚",
+  next: "▶",
+  prev: "◀",
+};
+
+/**
+ *
+ * @param {Type} type
+ * @param {number | undefined} lessonIndex
+ * @param {number} lastLessonIndex
+ * @return {number | undefined}
+ */
+const getNewLessonIndex = (type, lessonIndex, lastLessonIndex) => {
+  switch (type) {
+    case "first":
+      return undefined;
+    case "last":
+      return lastLessonIndex;
+    case "next":
+      return lessonIndex === undefined ? 0 : lessonIndex + 1;
+    case "prev":
+      return lessonIndex === undefined ? undefined : lessonIndex - 1;
+  }
+};
 
 /**
  * @class LessonButton
@@ -14,49 +53,79 @@ class LessonButton extends HTMLElement {
    */
   constructor() {
     super();
-    const shadowRoot = this.attachShadow({ mode: "open" });
-    const type = this.getAttribute("type") ?? "next";
+    this.$shadowRoot = this.attachShadow({ mode: "open" });
+    this.type = /** @type {Type} */ (this.getAttribute("type") ?? "next");
+    this.icon = /** @type {boolean} */ (
+      this.getAttribute("icon") === "true" ?? false
+    );
 
-    shadowAppendTemplate(shadowRoot, TAG).then(() => {
-      // coerce to never be null
-      this.button = /** @type {HTMLButtonElement} */ (
-        shadowRoot.querySelector("button")
-      );
+    Promise.all([getClonedTemplateNode(TAG), lessonData])
+      .then(([clonedTemplateNode, chapters]) => {
+        if (clonedTemplateNode) {
+          this.$shadowRoot.appendChild(clonedTemplateNode);
+        }
+        this.render(chapters);
+      })
+      .catch((e) => console.error(e));
+  }
 
-      const lessonNumber = getLessonNumber();
+  /**
+   * @method render
+   * @description render the component
+   * @param {Chapter[]} chapters
+   * @return {void}
+   */
+  render(chapters) {
+    this.$button = /** @type {HTMLButtonElement} */ (
+      this.$shadowRoot.querySelector("button")
+    );
 
-      if (!lessonNumber) {
-        this.button.style.display = "none";
-        return;
-      }
+    this.$link = /** @type {HTMLAnchorElement} */ (
+      this.$button.querySelector("a")
+    );
+    const { lessonIndex, chapterIndex = 0 } =
+      getLessonDataForPath(chapters) ?? {};
 
-      const newLessonNumber =
-        type === "next" ? lessonNumber + 1 : lessonNumber - 1;
+    const nextLessonIsNewChapter =
+      lessonIndex === undefined ||
+      lessonIndex === chapters[chapterIndex]?.maxChapterLessonIndex;
 
-      if (!lessonNumber || newLessonNumber < 1) {
-        this.button.style.display = "none";
-        return;
-      }
+    const lastLessonIndex = chapters[chapters.length - 1].maxChapterLessonIndex;
+    const newLessonIndex = getNewLessonIndex(
+      this.type,
+      lessonIndex,
+      lastLessonIndex
+    );
 
-      if (
-        type === "next" ? lessonNumber > lessons.length - 1 : lessonNumber < 2
-      ) {
-        this.button.innerHTML = "Back to Home";
-        this.button?.addEventListener("click", () => {
-          window.location.href = "/";
-        });
-        return;
-      }
+    const newPath = getPathFromLessonIndex(chapters, newLessonIndex ?? 0);
+    const {
+      lesson: newLesson,
+      lessonNumber: newLessonNumber,
+      chapter: newChapter,
+      chapterIndex: newChapterIndex,
+    } = getLessonDataForPath(chapters, newPath) ?? {};
 
-      const { title } = lessons[newLessonNumber - 1];
-      this.button.innerHTML = `${
-        type === "next" ? "Continue" : "Back"
-      } to Lesson ${newLessonNumber}: ${title}`;
+    this.$link.innerHTML = this.icon
+      ? icons[this.type]
+      : nextLessonIsNewChapter
+      ? `${titleCase(this.type)}, Chapter ${
+          intToRoman((newChapterIndex ?? 0) + 1) ?? ""
+        } - ${newChapter?.title}`
+      : `${titleCase(
+          this.type
+        )}, ${`Lesson ${newLessonNumber}: ${newLesson?.title}`}`;
 
-      this.button?.addEventListener("click", () => {
-        window.location.href = getLessonPath(newLessonNumber);
-      });
-    });
+    this.$link.title = `${this.type} lesson`;
+
+    if (
+      (lessonIndex === undefined && ["first", "prev"].includes(this.type)) ||
+      (lessonIndex === lastLessonIndex && ["last", "next"].includes(this.type))
+    ) {
+      this.$button.disabled = true;
+      return;
+    }
+
+    this.$link.href = newPath;
   }
 }
 

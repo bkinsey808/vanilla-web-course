@@ -1,0 +1,18 @@
+[
+  {
+    "key": "hello-world",
+    "title": "Hello World!"
+  },
+  {
+    "key": "browser-dev-tools",
+    "title": "Browser Dev Tools"
+  },
+  {
+    "key": "hack-this-course",
+    "title": "Hack This Course"
+  },
+  {
+    "key": "vanilla-tech-stack",
+    "title": "Vanilla Tech Stack"
+  }
+]

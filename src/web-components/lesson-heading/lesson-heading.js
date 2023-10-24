@@ -1,4 +1,9 @@
-import { getLessonNumber, lessons } from "../../lesson/utils.js";
+import {
+  getLessonDataForPath,
+  getPathFromLessonIndex,
+  lessonData,
+} from "../../lesson/utils.js";
+import { intToRoman } from "../../utils.js";
 import { shadowAppendTemplate } from "../utils.js";
 
 const TAG = "lesson-heading";
@@ -15,14 +20,25 @@ class LessonHeading extends HTMLElement {
   constructor() {
     super();
     const shadowRoot = this.attachShadow({ mode: "open" });
-    shadowAppendTemplate(shadowRoot, TAG).then(() => {
-      const lessonNumber = getLessonNumber();
-      const lesson = lessons[lessonNumber - 1];
-      const h2El = shadowRoot.querySelector("h2");
+    shadowAppendTemplate(shadowRoot, TAG).then(async () => {
+      const $a = shadowRoot.querySelector("a");
+      const $h2 = shadowRoot.querySelector("h2");
+      const chapters = await lessonData;
+      const { chapterNumber, chapterIndex, lessonNumber, lesson } =
+        getLessonDataForPath(chapters) ?? {};
 
-      if (lesson && h2El) {
-        h2El.textContent = `Lesson ${lessonNumber}: ${lesson.title}`;
+      if (!lesson || !$a || !$h2 || chapterIndex == undefined) {
+        return;
       }
+
+      $a.href = getPathFromLessonIndex(
+        chapters,
+        chapters[chapterIndex]?.minChapterLessonIndex
+      );
+      $a.textContent = `Chapter ${intToRoman(chapterNumber ?? 1)}: ${
+        chapters[chapterIndex]?.title
+      }`;
+      $h2.textContent = `Lesson ${lessonNumber}: ${lesson.title}`;
     });
   }
 }
